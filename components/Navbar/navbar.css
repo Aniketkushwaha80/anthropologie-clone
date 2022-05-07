@@ -1,0 +1,61 @@
+.mainNavbar{
+    background-color: #fdfdf8;
+}
+.navTop{
+    display: flex;
+    justify-content: end;
+    background-color: whitesmoke;
+    height: 2rem;
+    padding: 10px 50px 0px 10px;
+}
+.navMid{
+    height: 60px;
+    display: flex;
+    background-color: #fdfdf8;
+    justify-content: space-between;
+    padding: 0px 50px 0px 50px;
+}
+.navMid>div{
+    display: flex;
+}
+.midLeft>div{
+    padding: 20px;
+    height: auto;
+    border-left: 1px solid #e5e2de;
+    border-right: 1px solid #e5e2de;
+}
+.midRight>div{
+    padding: 5px;
+    height: auto;
+    
+}
+.Nav-searchbar{
+    height: 40px;
+    width: 300px;
+}
+.cart-logo{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.navBottom{
+    display: flex;
+    background-color: #fdfdf8;
+    border: 1px solid #e5e2de;
+    padding: 5px 0px 0px 70px;
+    font-size: small;
+}
+.navBottom>div>button{
+    margin: 0 0 0 5px;
+    padding: 15px 15px 20px 15px;
+    border: transparent;
+    background-color: transparent;
+    color: #26262b;
+    font-size: 0.8rem;
+    font-family: "Avenir Medium", sans-serif;
+    font-weight: bold;
+}
+.navBottom>div>button:hover{
+    border-bottom: 1px solid #167a92;
+    color: #167a92;
+}
+

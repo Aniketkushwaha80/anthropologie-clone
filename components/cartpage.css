@@ -1,0 +1,71 @@
+.main-Cart{
+    display: flex;
+    padding: 20px;
+
+}
+.cart-left{
+    width: 70%;
+    margin-right: 20px;
+}
+.cart-right{
+    border: 1px solid blue;
+    height: 500px;
+    width: 30%;
+}
+.producthead{
+    text-align: left;
+    font-size: 25px;
+    font-family: "Avenir Medium", sans-serif;
+}
+.productmid{
+    margin-top: 20px;
+    border-top:1px solid #e5e2de;
+    border-bottom:1px solid #e5e2de;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 15px 0;
+    font-family: Avenir Medium,sans-serif;
+}
+.productmid>div:nth-child(1){
+    margin-left: 10rem;
+}
+.productmid>div:nth-child(2){
+    margin-left: 10rem;
+}
+.productdetails{
+    display: flex;
+    margin-top: 20px;
+    border-top:1px solid #e5e2de;
+    border-bottom:1px solid #e5e2de;
+    justify-content: space-between;
+    padding: 15px 0 15px 0;
+    font-family: Avenir Medium,sans-serif;
+}
+.prod-img{
+    height: 200px;
+    width: 14%;
+}
+.prod-detail{
+    height: 200px;
+    width: 30%;
+}
+.prod-price{
+    height: 200px;
+    width: 15%;
+}
+.prod-quantity{
+    height: 200px;
+    width: 15%;
+}
+.prod-total{
+    text-align: right;
+    height: 200px;
+    width: 15%;
+}
+#quant{
+    font-weight: bold;
+    margin-left: 30%;
+    margin-top: 70px;
+    padding: 10px;
+}
+
