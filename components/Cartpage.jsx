@@ -55,7 +55,19 @@ export const Cartpage = ()=>{
                 </div>
                 
             </div>
-            <div className="cart-right"></div>
+            <div className="cart-right">
+                <div className="paymenthead">
+                    <b>Order Summary</b>
+                </div>
+                <div className="paydetailed">
+                    <div>Subtotal <span> 88.00</span></div>
+                    <div>Shipping <span>TBD</span></div>
+                    <div>Estimated Tax <span>0</span></div>
+                    <div> <b>Total </b> <span> <b>88.00</b></span></div>
+
+                    <div id="paybutton"> <button>PROCEED TO CHECKOUT</button></div>
+                </div>
+            </div>
         </div>
     )
 }
