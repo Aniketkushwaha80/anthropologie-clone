@@ -131,7 +131,7 @@ export const Search= ({cat}) => {
             <div id="sort">
               
               <h2>Realated products to {store}</h2>
-              <p>products</p>
+              <p></p>
     <p>Sort By :</p> 
     <select  onChange={Handle}
              id="select"
@@ -145,13 +145,16 @@ export const Search= ({cat}) => {
 </div>
             <div className="p-main">
                 <div className="p-main-left">
-<a href="">New!</a>
 
-              <p> {cat}</p>
-              <p>Beauty & Wellness</p>
-              <p>Shoes</p>
-              <p>dresses</p>
-              <p>wedding</p>
+
+                <p>Browse By:</p>
+
+<Link to="/perfume">Perfume</Link>
+<Link to="/beauty&wellness">Beauty & wellness</Link>
+<Link to="/outdoorpatiofurniture">Outdoor Patio Furniture</Link>
+<Link to="/outdoordecor">Outdoor Decor</Link>
+<Link to="/dresses">Dresses</Link>
+<Link to="/clothing">Clothing</Link>
                 </div>
                 <div className="p-main-right">
               

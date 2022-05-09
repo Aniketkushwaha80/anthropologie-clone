@@ -2,35 +2,48 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./cartpage.css";
+import { MdDelete } from 'react-icons/Md';
 
-
-function Total({q,p}){
-    const ans=q*p
-    
-return <p>{ans}</p>
-}
 
 export const Cartpage = ()=>{
+
+
 
     const [cartData,setcartData]=useState([])
     const [total,settotal]=useState()
     
+
+    var getdata=()=>{
+        axios.get('https://anthropologie-application.herokuapp.com/cart')
+        .then(function (response) {
+          // handle success
+          setcartData(response.data)
+      
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+        });
+    }
    useEffect(()=>{
-    axios.get('https://anthropologie-application.herokuapp.com/cart')
-    .then(function (response) {
-      // handle success
-      setcartData(response.data)
-  
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .then(function () {
-      // always executed
-    });
+    getdata()
    },[])
-   console.log(cartData)
+ 
+  
+   
+  
+function Delete(id){
+    axios.delete(`${"https://anthropologie-application.herokuapp.com/cart"}/${id}`).then(()=>{
+        
+        getdata()
+        location.reload();
+    })
+   
+
+}
 
     return(
         <div className="main-Cart">
@@ -42,11 +55,11 @@ export const Cartpage = ()=>{
                     <div>Item</div>
                     <div>Item price</div>
                     <div>Quantity</div>
-                    <div>Total price</div>
+                    <div>Remove Item</div>
                 </div>
                {
                    cartData.map((e)=>(
-                    <div className="productdetails">
+                    <div key={e._id} className="productdetails">
                     <div className="prod-img">
                         <img src={e.product_id.image_link[0]}/>
                     </div>
@@ -61,7 +74,7 @@ export const Cartpage = ()=>{
                   
                     <div className="prod-quantity">
                         <select name="" id="quant" >
-                           
+                           <option value="none" selected disabled hidden>{e.quantity}</option>
                            <option value="">1</option>
                            <option value="">2</option>
                            <option value="">3</option>
@@ -84,8 +97,10 @@ export const Cartpage = ()=>{
                            <option value="">20</option>
                         </select>
                     </div>
-                    <div className="prod-total">
-                         <Total q={e.quantity} p={e.product_id.price}/>
+                    <div className="delete">
+                        <MdDelete onClick={(()=>{
+                            Delete(e._id)
+                        })}/>
                          
                     </div>
                 </div>
@@ -98,10 +113,10 @@ export const Cartpage = ()=>{
                     <b>Order Summary</b>
                 </div>
                 <div className="paydetailed">
-                    <div>Subtotal <span> 88.00</span></div>
+                    <div>Subtotal <span> $883.00</span></div>
                     <div>Shipping <span>TBD</span></div>
                     <div>Estimated Tax <span>0</span></div>
-                    <div> <b>Total </b> <span> <b>88.00</b></span></div>
+                    <div> <b>Total </b> <span> <b>$883.00</b></span></div>
 
                     <Link to="/payment" id="paybutton"> <button>PROCEED TO CHECKOUT</button></Link>
                 </div>

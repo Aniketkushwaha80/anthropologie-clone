@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import "./Register.css"
 const Register = () => {
+    const navigate=useNavigate()
 
     const [formData,setformData]=useState([])
 
@@ -36,6 +38,7 @@ const Register = () => {
         console.log(data);
         if(data.status="ok"){
             alert("Successfully Registered"); 
+            navigate("/login")
         } else{
             alert("Registation failed"); 
         }
@@ -70,7 +73,7 @@ const Register = () => {
         
        </div>
        <h2 className="r-heading">Already Have an Account?</h2>
-      <button className='create-button'>Sign In</button>
+    <Link to="/login">  <button className='create-button'>Sign In</button></Link>
          </div>
          </form>
     );

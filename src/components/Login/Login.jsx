@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
-
+    const navigate=useNavigate()
     
     const [formData,setformData]=useState([])
 
     const Handle=(e)=>{
+       
 
         const {name, value}=e.target
             setformData({
@@ -33,8 +36,9 @@ const Login = () => {
         console.log(data);
         if(data.status=="ok"){
             alert("Successfully login"); 
+            navigate("/")
         } else{
-            alert("loginfailed"); 
+            alert("Login Failed"); 
         }
     })
     .catch((err) => {
@@ -53,7 +57,7 @@ const Login = () => {
         <input  onChange={Handle} type="text" className="name" name='email'/>
         <lable className="lable" >Password</lable >
         <input  onChange={Handle} type="password" className="name" name='password'/>
-        <button className="submit"  type="submit" value="Submit">Create</button>
+        <button className="submit"  type="submit" value="Submit">sign in</button>
        
   
   
@@ -63,7 +67,7 @@ const Login = () => {
         
        </div>
        <h2 className="r-heading">Sign Up</h2>
-      <button className='create-button'>Create An Account</button>
+    <Link to="/register">  <button className='create-button'>Create An Account</button></Link>
          </div>
          </form>
     );

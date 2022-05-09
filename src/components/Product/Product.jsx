@@ -147,8 +147,8 @@ const Product = ({cat}) => {
 
                
                {
-                   productData.filter((product)=>product.category.toLowerCase().includes(`${cat}`)).map((e,i)=>(
-                    <Link className='p-main-right-div' key={i} to={`/product/${e._id}`}>
+                   productData.filter((product)=>product.category.toLowerCase().includes(`${cat}`)).map((e)=>(
+                    <Link className='p-main-right-div' key={e._id} to={`/product/${e._id}`}>
                      
 
  

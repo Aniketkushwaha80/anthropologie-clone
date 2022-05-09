@@ -54,14 +54,30 @@
     height: 200px;
     width: 15%;
 }
+.prod-price>:nth-child(1){
+    margin-top: 70px;
+}
 .prod-quantity{
     height: 200px;
     width: 15%;
 }
-.prod-total{
+.prod-quantity>:nth-child(1){
+    margin-top: 70px;
+}
+.delete{
     text-align: right;
     height: 200px;
     width: 15%;
+}
+.delete>:nth-child(1){
+    font-size: 35px;
+    margin-top: 70px;
+    color: rgb(75,86,102)
+    ;
+    cursor: pointer;
+}
+.delete>:nth-child(1):hover{
+  color: cadetblue;
 }
 #quant{
     font-weight: bold;

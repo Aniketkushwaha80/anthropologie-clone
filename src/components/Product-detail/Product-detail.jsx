@@ -8,8 +8,10 @@ import axios from 'axios';
 
 
 
+
  function Check(p){
 
+  
 
     if(p.p !== ''){
         return <img onClick={(()=>{
@@ -29,10 +31,21 @@ import axios from 'axios';
     
      }
      var  change;
-   
+   var id;
 const Productdetail = () => {
 
+  const [state,setState]=useState(true)
 const [qnt,setQnt]=useState()
+
+const [productData,setproductData]=useState([])
+const [productimagemain,setproductimagemain]=useState([])
+const [productimage,setproductimage]=useState([])
+const [productcolor,setproductcolor]=useState([])
+const [productsize,setproductsize]=useState([])
+
+
+
+
 
 function Addcart(p){
 
@@ -42,12 +55,24 @@ function Addcart(p){
       })
       .then(function (response) {
         console.log(response);
+      
       })
       .catch(function (error) {
         console.log(error);
       });
-    console.log(p,qnt)
+      setState(!state)
+      location.reload();
+
+      
+
+     
+     
 }
+
+
+
+
+
 
 function Handlechange(e){
    setQnt( e.target.value)
@@ -58,11 +83,6 @@ function Handlechange(e){
 
     
 
-    const [productData,setproductData]=useState([])
-    const [productimagemain,setproductimagemain]=useState([])
-    const [productimage,setproductimage]=useState([])
-    const [productcolor,setproductcolor]=useState([])
-    const [productsize,setproductsize]=useState([])
 
      change=(p)=>{
         setproductimagemain(p)
@@ -166,7 +186,7 @@ function Handlechange(e){
  </select>
  <button className='cart-button' onClick={()=>{
    Addcart(productData._id)
- }}>ADD TO CART</button>
+ }}>{state ? "Add To Card" :"Added To Cart"}</button>
  <p className="p-d-rightdiv-color">Product detail</p>
  <p className='product-detail-deatil'>{productData.detail}</p>
 
