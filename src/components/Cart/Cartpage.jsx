@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./cartpage.css";
-import { MdDelete } from 'react-icons/Md';
+// import { MdDelete } from 'react-icons/Md';
 
 
 export const Cartpage = ()=>{
@@ -98,9 +98,9 @@ function Delete(id){
                         </select>
                     </div>
                     <div className="delete">
-                        <MdDelete onClick={(()=>{
+                        {/* <MdDelete onClick={(()=>{
                             Delete(e._id)
-                        })}/>
+                        })}/> */}
                          
                     </div>
                 </div>
