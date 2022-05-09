@@ -115,11 +115,11 @@ const Product = ({cat}) => {
     return (
    
         <div className='product'>
-            <p className='p-head'>Home & Furniture   /   New! </p>
+            <p className='p-head'>{cat}   </p>
             <div id="sort">
               
-              <h2>New Home Décor & Furniture for Spring</h2>
-              <p>2002 products</p>
+              <h2>Related Product to : {cat}</h2>
+              <p></p>
     <p>Sort By :</p> 
     <select  onChange={Handle}
              id="select"
